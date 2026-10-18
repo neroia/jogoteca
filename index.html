@@ -1,0 +1,65 @@
+   <!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Uma seleção de jogos para jogar online." />
+    <title>Jogoteca — catálogo de jogos</title>
+    <link rel="icon" href="/img/favicon.png" type="image/png" />
+
+    <link rel="stylesheet" href="style.css" />
+    
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Jogoteca, início">
+        <img class="brand-icon" src="/img/favicon.png" alt="">
+        <span>jogoteca</span>
+      </a>
+      <span class="header-note">SEU PRÓXIMO JOGO FAVORITO</span>
+    </header>
+
+    <main>
+      <section id="catalog-view" class="catalog page-shell" aria-label="Catálogo de jogos">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">A COLEÇÃO</p>
+            <h2>Jogos em destaque</h2>
+          </div>
+          <span id="game-count" class="game-count"></span>
+        </div>
+
+        <p id="catalog-message" class="status-message" role="alert">Carregando jogos...</p>
+        <p id="empty-catalog" class="empty-catalog" hidden>
+          Nenhum jogo disponível no momento.
+        </p>
+        <div id="game-grid" class="game-grid" aria-live="polite"></div>
+      </section>
+
+      <section
+        id="detail-view"
+        class="detail page-shell"
+        aria-labelledby="detail-title"
+        hidden
+      >
+        <button id="back-button" class="back-button" type="button">
+          <span aria-hidden="true">←</span> Voltar para os jogos
+        </button>
+        <div class="detail-content">
+          <div id="detail-cover" class="cover-art detail-cover" aria-hidden="true"></div>
+          <div class="detail-copy">
+            <h1 id="detail-title"></h1>
+            <p id="detail-description" class="detail-description"></p>
+            <a id="game-link" class="play-link" target="_blank" rel="noopener noreferrer">Abrir jogo <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>JOGOTECA</span>
+      <span>UM CATÁLOGO FEITO PARA QUEM AMA JOGAR</span>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "DM Sans", sans-serif;
+  color: #f6f4f1;
+  background: #11110f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --muted: #92918d;
+  --accent: #c4f277;
+  --surface: #1b1b18;
+  --line: #2b2b27;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(ellipse at 50% -30%, rgb(196 242 119 / 8%), transparent 55%),
+    #11110f;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.site-header,
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 25px 36px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+
+.brand-icon {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--accent);
+  color: #17190f;
+  font-size: 17px;
+}
+
+.header-note,
+.eyebrow,
+.game-count,
+.site-footer {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.header-note,
+.eyebrow,
+.site-footer {
+  color: var(--muted);
+}
+
+.page-shell {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+
+.catalog {
+  padding-top: 78px;
+  padding-bottom: 96px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+.detail-copy h1 {
+  margin-bottom: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 600;
+  letter-spacing: -4px;
+  line-height: 0.99;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin: 0 0 23px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+
+.game-count {
+  padding-bottom: 4px;
+  color: var(--muted);
+}
+
+.play-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 40px;
+  padding: 0 15px;
+  border: 1px solid rgb(196 242 119 / 40%);
+  border-radius: 7px;
+  background: rgb(196 242 119 / 8%);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.play-link:hover {
+  border-color: var(--accent);
+  background: rgb(196 242 119 / 14%);
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px 20px;
+}
+
+.game-card {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cover-art {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  aspect-ratio: 0.78;
+  place-items: center;
+  isolation: isolate;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 11px;
+  background: #1b1b18;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.cover-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-caption {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  color: rgb(255 255 255 / 95%);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(14px, 1.8vw, 19px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  text-shadow: 0 2px 14px rgb(0 0 0 / 35%);
+  pointer-events: none;
+}
+
+.status-message {
+  margin: 20px 0;
+  color: #ffaaa3;
+  font-size: 14px;
+}
+
+.empty-catalog {
+  padding: 44px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.game-card:hover .cover-art,
+.game-card:focus-visible .cover-art {
+  transform: translateY(-4px);
+  border-color: rgb(196 242 119 / 55%);
+  filter: brightness(1.08);
+}
+
+.game-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+  border-radius: 11px;
+}
+
+.game-name {
+  margin: 13px 0 4px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.25px;
+}
+
+.detail {
+  min-height: calc(100vh - 151px);
+  padding-top: 44px;
+  padding-bottom: 72px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 0;
+  border: 0;
+  background: transparent;
+  color: #c5c4bf;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  color: var(--accent);
+}
+
+.back-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.back-button span {
+  font-size: 20px;
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: minmax(240px, 390px) 1fr;
+  align-items: center;
+  gap: clamp(36px, 8vw, 104px);
+  max-width: 980px;
+  margin: 42px auto 0;
+}
+
+.detail-cover {
+  width: 100%;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 35%);
+}
+
+.detail-cover .cover-caption {
+  right: 24px;
+  bottom: 24px;
+  left: 24px;
+  font-size: 27px;
+}
+
+.detail-copy h1 {
+  margin-bottom: 16px;
+  font-size: clamp(38px, 5vw, 58px);
+  letter-spacing: -2.8px;
+}
+
+.detail-description {
+  max-width: 430px;
+  margin-bottom: 28px;
+  color: #aaa9a4;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.play-link {
+  min-height: 44px;
+  padding: 0 18px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  font-size: 9px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 800px) {
+  .game-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px 16px;
+  }
+
+  .detail-content {
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header,
+  .site-footer {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .header-note {
+    max-width: 120px;
+    font-size: 8px;
+    text-align: right;
+  }
+
+  .page-shell {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .catalog {
+    padding-top: 58px;
+    padding-bottom: 68px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 23px 13px;
+  }
+
+  .cover-art {
+    border-radius: 8px;
+  }
+
+  .cover-caption {
+    right: 11px;
+    bottom: 12px;
+    left: 11px;
+    font-size: 15px;
+  }
+
+  .game-name {
+    font-size: 14px;
+  }
+
+  .detail {
+    padding-top: 30px;
+  }
+
+  .detail-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 360px;
+    margin-top: 28px;
+  }
+
+  .detail-cover {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .detail-cover .cover-symbol {
+    font-size: 86px;
+  }
+
+  .detail-copy h1 {
+    font-size: 42px;
+  }
+
+  .site-footer {
+    gap: 18px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

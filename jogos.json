@@ -1,0 +1,68 @@
+[
+  {
+    "link": "https://fiveplay.lol/",
+    "capa": "https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png",
+    "nome": "GTA 5",
+    "descricao": "Explore Los Santos em um mundo aberto."
+  },
+  {
+    "link": "https://q3.pieter.com",
+    "capa": "https://cdn.mobygames.com/covers/4127002-quake-iii-arena-windows-front-cover.jpg",
+    "nome": "Quake 3",
+    "descricao": "Combate frenético em arenas futuristas."
+  },
+  {
+    "link": "https://vel.gg/bo1z",
+    "capa": "https://cdn.mobygames.com/covers/7013381-call-of-duty-black-ops-playstation-3-front-cover.jpg",
+    "nome": "BO1 Zombies",
+    "descricao": "Enfrente hordas de zumbis e sobreviva."
+  },
+  {
+    "link": "https://skate.aaddpp.lol",
+    "capa": "https://cdn.mobygames.com/covers/225714-skate-3-xbox-360-front-cover.jpg",
+    "nome": "Skate 3",
+    "descricao": "Domine manobras radicais sobre o skate."
+  },
+  {
+    "link": "https://mitchellhynes.com/halo",
+    "capa": "https://www.halopedia.org/images/3/3e/HCE_BoxArt.png?bfcf3",
+    "nome": "Halo CE",
+    "descricao": "Lute pela humanidade em batalhas épicas."
+  },
+  {
+    "link": "https://pes6.optijuegos.net",
+    "capa": "https://i.pinimg.com/736x/d1/1d/d0/d11dd01d0fcbc5b3c0f16ac31497b5dc.jpg",
+    "nome": "PES 6",
+    "descricao": "Reviva o futebol clássico nos gramados."
+  },
+  {
+    "link": "https://ut.pieter.com",
+    "capa": "https://m.media-amazon.com/images/I/61lBfJ-otVL._AC_SX679_.jpg",
+    "nome": "Unreal Tournament",
+    "descricao": "Dispute combates intensos em arenas."
+  },
+  {
+    "link": "https://q1.pieter.com",
+    "capa": "https://upload.wikimedia.org/wikipedia/commons/8/80/Quake_cover.png",
+    "nome": "Quake 1",
+    "descricao": "Enfrente monstros em um mundo sombrio."
+  },
+  {
+    "link": "https://rtcw.pieter.com",
+    "capa": "https://cdn.mobygames.com/covers/6428837-return-to-castle-wolfenstein-macintosh-front-cover.jpg",
+    "nome": "Return to Castle Wolfenstein",
+    "descricao": "Combata forças nazistas em missões intensas."
+  },
+  {
+    "link": "https://surfd.net",
+    "capa": "https://www.mobygames.com/images/covers/l/counter-strike.jpg",
+    "nome": "CS Surf",
+    "descricao": "Deslize por rampas em mapas de surf."
+  },
+  {
+    "link": "https://q2.pieter.com",
+    "capa": "https://psxdatacenter.com/images/hires/P/Q/SLES-01534/SLES-01534-F-ALL.jpg",
+    "nome": "Quake 2",
+    "descricao": "Enfrente alienígenas em batalhas futuristas."
+  }
+]
