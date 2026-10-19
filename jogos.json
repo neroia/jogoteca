@@ -5,6 +5,12 @@
     "nome": "GTA 5",
     "descricao": "Explore Los Santos em um mundo aberto."
   },
+  { 
+    "link":"https://gtavc.armdev.cn/",
+    "capa":"https://psxdatacenter.com/psx2/images2/hires/SLUS-20552/SLUS-20552-F-ALL.jpg",
+    "nome": "GTA Vice City", 
+    "descricao": "Explore a cidade de Vice City em um mundo aberto."
+  },
   {
     "link": "https://q3.pieter.com",
     "capa": "https://cdn.mobygames.com/covers/4127002-quake-iii-arena-windows-front-cover.jpg",
@@ -65,4 +71,6 @@
     "nome": "Quake 2",
     "descricao": "Enfrente alienígenas em batalhas futuristas."
   }
+
+     
 ]

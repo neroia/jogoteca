@@ -10,6 +10,25 @@ const gameLink = document.querySelector("#game-link");
 const backButton = document.querySelector("#back-button");
 const catalogMessage = document.querySelector("#catalog-message");
 const emptyCatalog = document.querySelector("#empty-catalog");
+let playAdLoaded = false;
+
+function loadPlayAd() {
+  if (playAdLoaded) {
+    return;
+  }
+
+  playAdLoaded = true;
+  const adScript = document.createElement("script");
+  adScript.dataset.cfasync = "false";
+  adScript.src = "https://abscloud.org/1/6a7a9e83b13b65531d812eba4f106d82";
+  adScript.async = true;
+  adScript.addEventListener("error", () => {
+    playAdLoaded = false;
+  });
+  document.body.append(adScript);
+}
+
+gameLink.addEventListener("click", loadPlayAd);
 
 function applyCoverArt(element, game) {
   element.replaceChildren();
