@@ -1,34 +1,8 @@
 let games = [];
 
 const grid = document.querySelector("#game-grid");
-const catalogView = document.querySelector("#catalog-view");
-const detailView = document.querySelector("#detail-view");
-const detailCover = document.querySelector("#detail-cover");
-const detailTitle = document.querySelector("#detail-title");
-const detailDescription = document.querySelector("#detail-description");
-const gameLink = document.querySelector("#game-link");
-const backButton = document.querySelector("#back-button");
 const catalogMessage = document.querySelector("#catalog-message");
 const emptyCatalog = document.querySelector("#empty-catalog");
-let playAdLoaded = false;
-
-function loadPlayAd() {
-  if (playAdLoaded) {
-    return;
-  }
-
-  playAdLoaded = true;
-  const adScript = document.createElement("script");
-  adScript.dataset.cfasync = "false";
-  adScript.src = "https://abscloud.org/1/6a7a9e83b13b65531d812eba4f106d82";
-  adScript.async = true;
-  adScript.addEventListener("error", () => {
-    playAdLoaded = false;
-  });
-  document.body.append(adScript);
-}
-
-gameLink.addEventListener("click", loadPlayAd);
 
 function applyCoverArt(element, game) {
   element.replaceChildren();
@@ -44,21 +18,6 @@ function applyCoverArt(element, game) {
   caption.className = "cover-caption";
   caption.textContent = game.nome;
   element.append(caption);
-}
-
-function showGame(game) {
-  if (!game) {
-    return;
-  }
-
-  applyCoverArt(detailCover, game);
-  detailTitle.textContent = game.nome;
-  detailDescription.textContent = game.descricao;
-  gameLink.href = game.link;
-  catalogView.hidden = true;
-  detailView.hidden = false;
-  document.title = `${game.nome} — Jogoteca`;
-  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function renderGames() {
@@ -81,8 +40,9 @@ function renderGames() {
 
     card.append(cover, title);
     card.addEventListener("click", () => {
-      window.history.pushState({ gameId: game.id }, "", `#${game.id}`);
-      showGame(game);
+      const playUrl = new URL("play.html", window.location.href);
+      playUrl.searchParams.set("game", game.id);
+      window.location.assign(playUrl);
     });
     grid.append(card);
   }
@@ -91,29 +51,6 @@ function renderGames() {
     ? `${String(games.length).padStart(2, "0")} JOGOS`
     : "";
 }
-
-function showCatalog() {
-  detailView.hidden = true;
-  catalogView.hidden = false;
-  document.title = "Jogoteca — catálogo de jogos";
-}
-
-backButton.addEventListener("click", () => {
-  if (window.history.state?.gameId) {
-    window.history.back();
-  } else {
-    window.history.replaceState(null, "", window.location.pathname);
-    showCatalog();
-  }
-});
-
-window.addEventListener("popstate", (event) => {
-  if (event.state?.gameId) {
-    showGame(games.find((game) => game.id === event.state.gameId));
-  } else {
-    showCatalog();
-  }
-});
 
 function normalizeGames(data) {
   if (!Array.isArray(data)) {
@@ -171,18 +108,6 @@ async function loadGames() {
     games = normalizeGames(await response.json());
     renderGames();
     catalogMessage.hidden = true;
-
-    const initialGameId = window.location.hash.slice(1);
-    if (initialGameId) {
-      const initialGame = games.find((game) => game.id === initialGameId);
-      if (initialGame) {
-        showGame(initialGame);
-      } else {
-        showCatalog();
-      }
-    } else {
-      showCatalog();
-    }
   } catch (error) {
     games = [];
     renderGames();
